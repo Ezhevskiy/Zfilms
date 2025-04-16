@@ -1,0 +1,97 @@
+/* src/components/Header.css */
+
+.header {
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный */
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Добавлена тень */
+    backdrop-filter: blur(5px); /* Добавлен эффект размытия */
+}
+
+.navbar-logo a {
+    font-size: 2em; /* Увеличен размер логотипа */
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700; /* Сделан более жирным */
+    font-family: sans-serif;
+    letter-spacing: 1.2px; /* Небольшое увеличение межбуквенного расстояния */
+    transition: color 0.3s; /* Добавлен плавный переход для цвета */
+}
+
+.navbar-logo a:hover {
+    color: #ddd; /* Изменение цвета при наведении */
+}
+
+.input-search {
+    padding: 10px 20px; /* Увеличены отступы */
+    border: none;
+    border-radius: 25px; /* Более скругленные углы */
+    background-color: #444; /* Более темный оттенок */
+    color: #fff;
+    width: 250px; /* Увеличена ширина */
+    font-size: 1em; /* Увеличен размер шрифта */
+    transition: background-color 0.3s; /* Добавлен плавный переход для фона */
+}
+
+.input-search:focus {
+    outline: none; /* Убрана обводка при фокусе */
+    background-color: #555; /* Изменение цвета при фокусе */
+}
+
+.navbar {
+    width: auto;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
+.navbar li {
+    margin-left: 35px; /* Увеличен отступ между пунктами меню */
+}
+
+.navbar a {
+    color: #eee; /* Более светлый оттенок */
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s padding 0.3s; /* Добавлена transition для background-color и padding */
+    font-size: 1.1em; /* Немного увеличен размер шрифта */
+    font-weight: 500; /* Полужирный шрифт */
+    padding: 5px 10px; /* Add padding for a more consistent size */
+    border-radius: 5px; /* Keep the border-radius here */
+    margin: -5px -10px; /* Add negative margins to compensate for padding */
+}
+
+.navbar a:hover {
+    color: #fff; /* Изменение цвета при наведении */
+    background-color: rgba(255, 255, 255, 0.1); /* небольшой прозрачный фон при наведении */
+
+    /* We don't need to change padding here anymore */
+}
+
+.login-button {
+    background-color: #3498db; /* новый синий цвет */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #2980b9; /* более темный оттенок синего при наведении */
+}

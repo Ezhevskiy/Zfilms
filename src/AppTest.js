@@ -1,5 +1,5 @@
 
-// App.js
+// AppTest.js
 import React, { useState } from 'react'; // Import useState
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -15,7 +15,7 @@ import film14Image from './assets/picture2/14.webp';
 import film15Image from './assets/picture2/15.webp';
 import film16Image from './assets/picture2/16.webp';
 
-function App() {
+function AppTest() {
   const settings = {
     dots: false,
     infinite: true,
@@ -252,4 +252,4 @@ function MovieCard({ imageUrl, title, description, year, rating, genre }) {
   );
 }
 
-export default App;
+export default AppTest;
