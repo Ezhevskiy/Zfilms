@@ -1,0 +1,459 @@
+ss
+/* App.ss */
+
+/* Общие стили для приложения */
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #121212;  Возвращаем старый цвет фона */ /* удалите эту строку */
+  /* color: #121212; */ /* удалите эту строку */
+}
+
+body {
+  background-color: #121212; /* Очень темно-серый, почти черный */
+  color: #fff; /* Белый текст для хорошего контраста */
+  margin: 0; /* Ensure no default body margins */
+  padding: 0;
+}
+
+/* Стили для шапки (header) - Улучшенные */
+.header {
+  background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный */
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Добавлена тень */
+  backdrop-filter: blur(5px); /* Добавлен эффект размытия */
+}
+
+.navbar-logo a {
+  font-size: 2em; /* Увеличен размер логотипа */
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700; /* Сделан более жирным */
+  font-family: sans-serif;
+  letter-spacing: 1.2px; /* Небольшое увеличение межбуквенного расстояния */
+  transition: color 0.3s; /* Добавлен плавный переход для цвета */
+}
+
+.navbar-logo a:hover {
+  color: #ddd; /* Изменение цвета при наведении */
+}
+
+.input-search {
+  padding: 10px 20px; /* Увеличены отступы */
+  border: none;
+  border-radius: 25px; /* Более скругленные углы */
+  background-color: #444; /* Более темный оттенок */
+  color: #fff;
+  width: 250px; /* Увеличена ширина */
+  font-size: 1em; /* Увеличен размер шрифта */
+  transition: background-color 0.3s; /* Добавлен плавный переход для фона */
+}
+
+.input-search:focus {
+  outline: none; /* Убрана обводка при фокусе */
+  background-color: #555; /* Изменение цвета при фокусе */
+}
+
+.navbar {
+  width: auto;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+.navbar li {
+  margin-left: 35px; /* Увеличен отступ между пунктами меню */
+}
+
+.navbar a {
+  color: #eee; /* Более светлый оттенок */
+  text-decoration: none;
+  transition: color 0.3s, background-color 0.3s padding 0.3s; /* Добавлена transition для background-color и padding */
+  font-size: 1.1em; /* Немного увеличен размер шрифта */
+  font-weight: 500; /* Полужирный шрифт */
+  padding: 5px 10px; /* Add padding for a more consistent size */
+  border-radius: 5px; /* Keep the border-radius here */
+  margin: -5px -10px; /* Add negative margins to compensate for padding */
+}
+
+.navbar a:hover {
+  color: #fff; /* Изменение цвета при наведении */
+  background-color: rgba(255, 255, 255, 0.1); /* небольшой прозрачный фон при наведении */
+
+  /* We don't need to change padding here anymore */
+}
+
+.login-button {
+  background-color: #3498db; /* новый синий цвет */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #2980b9; /* более темный оттенок синего при наведении */
+}
+
+/* Основной контент */
+main {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #fff; /* Добавлен цвет текста для заголовков */
+}
+
+/* Стили для карточек фильмов (улучшенные) */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.movie-card {
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Более выразительная тень */
+  margin: 15px;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Добавлена анимация для тени */
+}
+
+.movie-card:hover {
+  transform: translateY(-8px); /* Увеличен эффект подъема */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Еще более выразительная тень при наведении */
+}
+
+.movie-card a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #fff;
+  padding: 15px; /* Увеличен внутренний отступ */
+  height: 100%;
+  box-sizing: border-box; /* Важно для учета padding */
+}
+
+.movie-card img {
+  width: 100%;
+  height: 350px; /* Увеличена высота изображения */
+  object-fit: cover;
+  border-radius: 8px; /* Скругление углов изображения */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+.movie-card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Выравнивание контента */
+}
+
+.movie-card h3 {
+  font-size: 1.3em; /* Увеличен размер шрифта заголовка */
+  margin: 0; /* Убран стандартный отступ */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-weight: 600; /* Полужирный шрифт */
+  letter-spacing: 0.5px; /* Небольшое увеличение межбуквенного расстояния */
+}
+
+.movie-card p {
+  font-size: 1em; /* Увеличен размер шрифта описания */
+  color: #ccc;
+  margin: 10px 0; /* Увеличен отступ */
+  text-align: left; /* Выравнивание текста по левому краю */
+  line-height: 1.4; /* Увеличен интервал между строками */
+}
+
+.movie-details {
+  display: flex;
+  justify-content: space-between; /* Равномерное распределение элементов */
+  align-items: center;
+  font-size: 0.9em; /* Увеличен размер шрифта */
+  color: #aaa;
+  padding: 10px 0; /* Уменьшен вертикальный отступ */
+  border-top: 1px solid #444; /* Добавлена разделительная линия */
+}
+
+.movie-details span {
+  margin-bottom: 0; /* Убран нижний отступ */
+}
+
+.movie-year {
+  font-weight: 500; /* Полужирный шрифт */
+}
+
+.movie-rating {
+  color: #ffc107; /* Золотой цвет для рейтинга */
+  font-weight: bold;
+}
+
+.movie-genre {
+  font-style: italic; /* Курсив для жанра */
+}
+
+/* Стили для подвала (footer) */
+.site-footer {
+  background-color: #212121;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.about-us,
+.menu,
+.contact {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.about-us {
+  width: 400px;
+}
+
+.menu ul,
+.contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+.menu a,
+.contact a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu a:hover,
+.contact a:hover {
+  color: #ddd;
+}
+
+.contact li {
+  margin-bottom: 10px;
+}
+
+.contact a,
+.contact a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact a:hover,
+.contact a:hover {
+  color: #ddd;
+}
+
+.copyright-text {
+  font-size: 0.9em;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+  }
+
+  .navbar {
+    margin-top: 0;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .navbar li {
+    margin-left: 30px;
+    margin-bottom: 0;
+  }
+}
+
+/* Общие стили слайдера */
+
+.slider-wrapper {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.movie-card-slider {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.movie-card-slider img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.movie-card-slider .movie-details {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 0.8em;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  color: #fff; /* Добавлен цвет текста для рейтинга */
+}
+
+.rating::before {
+  content: '★';
+  margin-right: 5px;
+}
+
+.age-restriction {
+  /* Стиль для возрастного ограничения */
+}
+
+.premiere-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 0, 0.8);
+  color: #000;
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-size: 0.7em;
+  z-index: 1;
+}
+
+/* Стили для стрелок слайдера */
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 50px; /* Ширина круга */
+  height: 50px; /* Высота круга */
+  border-radius: 50%; /* Делаем круг */
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон круга */
+  color: white; /* Цвет стрелки */
+  text-align: center;
+  line-height: 50px; /* Центрируем стрелку по вертикали */
+  font-size: 1px; /* Размер стрелки */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none; /* Убираем стандартную рамку кнопки */
+  outline: none; /* Убираем обводку при фокусе */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Затемняем круг при наведении */
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  /* Убираем стандартные стили стрелок slick */
+  content: '';
+}
+
+
+/* Добавляем эффект тени */
+.slick-prev {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slick-next {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slick-prev:before {
+   content: '‹'; /* Unicode для символа левой стрелки */
+}
+
+.slick-next:before {
+   content: '›'; /* Unicode для символа правой стрелки */
+}
+
+
+/* Added styles for the movie title on hover */
+.movie-card-slider .movie-title-hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+  z-index: 1; /* Ensure it's on top of other elements */
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
