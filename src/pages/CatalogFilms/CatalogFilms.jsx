@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MovieCard from '../Homepage/UI/MovieCard/MovieCard';
+import MovieCard from '../Homepage/UI/MovieCard/MovieCard'; //
 import './CatalogFilms.css'; //
 
 import film1Image from '../../assets/picture2/1.webp';
@@ -102,6 +102,15 @@ function Block2() {
     return (
         <section className="block2">
             <h2>Популярные фильмы</h2>
+
+            <div className="search-bar">
+                <input
+                    type="text"
+                    placeholder="Поиск фильма..."
+                    value={searchTerm}
+                    onChange={handleSearch}
+                />
+            </div>
 
             <div className="card-container">
                 {filteredMovies.map(movie => (

@@ -103,6 +103,15 @@ function Block2() {
         <section className="block2">
             <h2>Популярные сериалы</h2>
 
+            <div className="search-bar">
+                <input
+                    type="text"
+                    placeholder="Поиск сериалов..."
+                    value={searchTerm}
+                    onChange={handleSearch}
+                />
+            </div>
+
             <div className="card-container">
                 {filteredMovies.map(movie => (
                     <MovieCard

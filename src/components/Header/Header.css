@@ -26,8 +26,13 @@
     color: #ddd;
 }
 
+.search-form {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
 .input-search {
-    padding: 10px 20px;
+    padding: 10px 0px;
     border: none;
     border-radius: 25px;
     background-color: #444;
@@ -53,6 +58,7 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0;
+    padding-right: 50px;
 }
 
 .navbar li {
@@ -86,8 +92,98 @@
     font-weight: 600;
     text-decoration: none;
     transition: background-color 0.3s;
+    margin-left: 20px;
 }
 
 .login-button:hover {
     background-color: #2980b9;
+}
+
+/* Стили для бургер-меню (скрыто по умолчанию на больших экранах) */
+.burger-menu {
+    display: none;
+    font-size: 1.75em;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.burger-menu:hover {
+    color: #ddd;
+}
+
+/* Стили для иконок Boxicons */
+.burger-menu i {
+    font-size: 1em; /* Регулируем размер иконок Boxicons */
+}
+
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+}
+
+/* Медиа-запросы для адаптации под мобильные устройства */
+@media (max-width: 1096px) {
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+    }
+
+    .navbar-logo {
+        margin-bottom: 10px;
+        align-self: flex-start;
+    }
+
+    .search-form {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .input-search {
+        width: 100%;
+    }
+
+    .navbar {
+        display: none;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+        margin-left: 0;
+    }
+
+    /* Показываем бургер-меню */
+    .burger-menu {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        padding-right: 15px; /* Добавляем отступ справа */
+    }
+
+    .login-button {
+        width: 100%;
+        margin: 5px 15px;
+        padding: 12px 0px;
+        text-align: center;
+    }
+}
+
+/* Класс для открытия меню */
+.navbar-open {
+    display: block;
 }

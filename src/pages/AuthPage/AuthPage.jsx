@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import './AuthPage.css';
+import './AuthPage.css'; //
+import { useAuth } from '../../contexts/AuthContext'; //
 
 const AuthPage = () => {
     const [isLogin, setIsLogin] = useState(true); // Состояние для переключения между входом и регистрацией
@@ -8,16 +9,20 @@ const AuthPage = () => {
     const [successMessage, setSuccessMessage] = useState(''); // Сообщение об успехе
     const [errorMessage, setErrorMessage] = useState(''); // Сообщение об ошибке
 
+    const { login } = useAuth();
+
+
     const onSubmit = (data) => {
         setErrorMessage(''); // Очищаем сообщения об ошибках
         setSuccessMessage(''); // Очищаем сообщения об успехе
 
         if (isLogin) {
             // Симуляция входа
-            if (data.email === 'test@example.com' && data.password === 'password') {
+            if (data.email === 'test@example.com' && data.password === '123123') {
                 setSuccessMessage('Успешный вход!');
                 console.log('Вход успешен:', data);
                 // Сохранили его данные здесь
+                login({ email: data.email, name: 'Test User' }); // Симуляция успешного входа
             } else {
                 setErrorMessage('Неверный email или пароль.');
             }
@@ -25,7 +30,7 @@ const AuthPage = () => {
             // Симуляция регистрации
             setSuccessMessage('Успешная регистрация!');
             console.log('Регистрация успешна:', data);
-            //Перенаправили пользователя или автоматически выполнили вход
+            login({ email: data.email, name: data.name }); // Симуляция успешной регистрации и входа
         }
     };
 
