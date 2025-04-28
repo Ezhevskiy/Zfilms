@@ -99,7 +99,6 @@
     background-color: #2980b9;
 }
 
-/* Стили для бургер-меню (скрыто по умолчанию на больших экранах) */
 .burger-menu {
     display: none;
     font-size: 1.75em;
@@ -112,9 +111,8 @@
     color: #ddd;
 }
 
-/* Стили для иконок Boxicons */
 .burger-menu i {
-    font-size: 1em; /* Регулируем размер иконок Boxicons */
+    font-size: 1em;
 }
 
 
@@ -161,7 +159,6 @@
         margin-left: 0;
     }
 
-    /* Показываем бургер-меню */
     .burger-menu {
         display: block;
         position: absolute;
@@ -172,7 +169,7 @@
     .auth-buttons {
         flex-direction: column;
         align-items: stretch;
-        padding-right: 15px; /* Добавляем отступ справа */
+        padding-right: 15px;
     }
 
     .login-button {
@@ -183,7 +180,6 @@
     }
 }
 
-/* Класс для открытия меню */
 .navbar-open {
     display: block;
 }

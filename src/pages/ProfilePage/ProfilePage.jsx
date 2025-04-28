@@ -26,7 +26,6 @@ const ProfilePage = () => {
                 <div className="profile-info">
                     <p><strong>Имя:</strong> {user.name}</p>
                     <p><strong>Email:</strong> {user.email}</p>
-                    {/* Добавьте другие поля профиля, если необходимо */}
                     <button className="logout-button" onClick={handleLogout}>Выйти</button>
                 </div>
             ) : (
