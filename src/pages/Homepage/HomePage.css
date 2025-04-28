@@ -1,4 +1,4 @@
-/* Основной контент */
+
 main {
     padding: 20px;
     flex-grow: 1;
@@ -11,10 +11,9 @@ section {
 h2 {
     font-size: 2em;
     margin-bottom: 15px;
-    color: #fff; /* Добавлен цвет текста для заголовков */
+    color: #fff;
 }
 
-/* Стили для карточек фильмов (улучшенные) */
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -26,15 +25,15 @@ h2 {
     background-color: #333;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Более выразительная тень */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     margin: 15px;
     width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s; /* Добавлена анимация для тени */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .movie-card:hover {
-    transform: translateY(-8px); /* Увеличен эффект подъема */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Еще более выразительная тень при наведении */
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .movie-card a {
@@ -42,65 +41,65 @@ h2 {
     flex-direction: column;
     text-decoration: none;
     color: #fff;
-    padding: 15px; /* Увеличен внутренний отступ */
+    padding: 15px;
     height: 100%;
-    box-sizing: border-box; /* Важно для учета padding */
+    box-sizing: border-box;
 }
 
 .movie-card img {
     width: 100%;
-    height: 350px; /* Увеличена высота изображения */
+    height: 350px;
     object-fit: cover;
-    border-radius: 8px; /* Скругление углов изображения */
-    margin-bottom: 10px; /* Отступ снизу */
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .movie-card-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Выравнивание контента */
+    justify-content: space-between;
 }
 
 .movie-card h3 {
-    font-size: 1.3em; /* Увеличен размер шрифта заголовка */
-    margin: 0; /* Убран стандартный отступ */
-    text-align: left; /* Выравнивание текста по левому краю */
-    font-weight: 600; /* Полужирный шрифт */
-    letter-spacing: 0.5px; /* Небольшое увеличение межбуквенного расстояния */
+    font-size: 1.3em;
+    margin: 0;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .movie-card p {
-    font-size: 1em; /* Увеличен размер шрифта описания */
+    font-size: 1em;
     color: #ccc;
-    margin: 10px 0; /* Увеличен отступ */
-    text-align: left; /* Выравнивание текста по левому краю */
-    line-height: 1.4; /* Увеличен интервал между строками */
+    margin: 10px 0;
+    text-align: left;
+    line-height: 1.4;
 }
 
 .movie-details {
     display: flex;
-    justify-content: space-between; /* Равномерное распределение элементов */
+    justify-content: space-between;
     align-items: center;
-    font-size: 0.9em; /* Увеличен размер шрифта */
+    font-size: 0.9em;
     color: #aaa;
-    padding: 10px 0; /* Уменьшен вертикальный отступ */
-    border-top: 1px solid #444; /* Добавлена разделительная линия */
+    padding: 10px 0;
+    border-top: 1px solid #444;
 }
 
 .movie-details span {
-    margin-bottom: 0; /* Убран нижний отступ */
+    margin-bottom: 0;
 }
 
 .movie-year {
-    font-weight: 500; /* Полужирный шрифт */
+    font-weight: 500;
 }
 
 .movie-rating {
-    color: #ffc107; /* Золотой цвет для рейтинга */
+    color: #ffc107;
     font-weight: bold;
 }
 
 .movie-genre {
-    font-style: italic; /* Курсив для жанра */
+    font-style: italic;
 }
