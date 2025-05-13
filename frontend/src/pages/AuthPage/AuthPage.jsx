@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import './AuthPage.css'; //
-import { useAuth } from '../../contexts/AuthContext'; //
+import { useAuth } from '../../contexts/AuthContext';
+import {InputText} from "../../contexts/InputText"; //
 
 const AuthPage = () => {
     const [isLogin, setIsLogin] = useState(true); // Состояние для переключения между входом и регистрацией
@@ -49,6 +50,7 @@ const AuthPage = () => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 {!isLogin && (
+
                     <div className="form-group">
                         <label htmlFor="name">Имя:</label>
                         <input

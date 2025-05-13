@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     const login = (userData) => {
         setUser(userData);
         setIsLoggedIn(true);
-        localStorage.setItem('user', JSON.stringify(userData)); // Пример сохранения в localStorage
+        localStorage.setItem('user', JSON.stringify(userData));
         localStorage.setItem('isLoggedIn', 'true');
     };
 
